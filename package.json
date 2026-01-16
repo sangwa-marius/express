@@ -1,0 +1,19 @@
+{
+  "name": "express",
+  "version": "1.0.0",
+  "description": "studying express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "marius",
+    "sangwa",
+    "ganza"
+  ],
+  "author": "Sangwa Marius",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
