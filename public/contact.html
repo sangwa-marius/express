@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - GreenFields</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      line-height: 1.6;
+    }
+    header, footer {
+      background: #000;
+      border-color: #222;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    header {
+      background: linear-gradient(to bottom, #111, #0a0a0a);
+      padding: 1.5rem 5%;
+      border-bottom: 1px solid #222;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #4caf50;
+    }
+    .nav-links a {
+      color: #ddd;
+      text-decoration: none;
+      margin-left: 2.2rem;
+      font-weight: 500;
+      transition: color 0.25s;
+    }
+    .nav-links a:hover, .active {
+      color: #81c784;
+    }
+    .container {
+      max-width: 900px;
+      margin: 5rem auto 4rem;
+      padding: 0 5%;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3.2rem;
+      margin-bottom: 1.5rem;
+      color: #81c784;
+    }
+    .contact-info {
+      margin: 3rem 0;
+      font-size: 1.2rem;
+    }
+    .contact-info p {
+      margin: 1.2rem 0;
+    }
+    .btn {
+      display: inline-block;
+      background: #4caf50;
+      color: white;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1.15rem;
+      margin-top: 1.5rem;
+      transition: all 0.3s;
+    }
+    .btn:hover {
+      background: #388e3c;
+      transform: translateY(-3px);
+    }
+    footer {
+      text-align: center;
+      padding: 2.5rem;
+      color: #777;
+      border-top: 1px solid #222;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">GreenFields</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="crops.html">Crops</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Get in Touch</h1>
+    
+    <div class="contact-info">
+      <p>We are happy to answer your questions about modern farming techniques, seed selection, irrigation systems or partnership opportunities.</p>
+      
+      <p><strong>Email:</strong> hello@greenfields.ag</p>
+      <p><strong>Phone:</strong> +250 788 123 456</p>
+      <p><strong>Office:</strong> Kigali, Rwanda • Musanze & Kayonza farms</p>
+    </div>
+
+    <a href="mailto:hello@greenfields.ag" class="btn">Send us an Email →</a>
+  </div>
+
+  <footer>
+    <p>© 2026 GreenFields — Modern, Responsible, Productive Farming</p>
+  </footer>
+
+</body>
+</html>

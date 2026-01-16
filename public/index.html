@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GreenFields - Modern Farming</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #0a0a0a;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(to bottom, #111, #0a0a0a);
+      padding: 1.5rem 5%;
+      border-bottom: 1px solid #222;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #4caf50;
+    }
+    .nav-links a {
+      color: #ddd;
+      text-decoration: none;
+      margin-left: 2.2rem;
+      font-weight: 500;
+      transition: color 0.25s;
+    }
+    .nav-links a:hover {
+      color: #81c784;
+    }
+    .hero {
+      min-height: 90vh;
+      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
+                  url('https://images.unsplash.com/photo-1500595046743-ee5a8a800ec2?auto=format&fit=crop&q=80&w=1600');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 5%;
+    }
+    .hero-content {
+      max-width: 800px;
+    }
+    h1 {
+      font-size: 3.8rem;
+      margin-bottom: 1.2rem;
+      color: #fff;
+    }
+    .hero p {
+      font-size: 1.35rem;
+      margin-bottom: 2rem;
+      color: #ccc;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #4caf50;
+      color: white;
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .btn:hover {
+      background-color: #388e3c;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(76,175,80,0.35);
+    }
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 2.5rem;
+      color: #777;
+      border-top: 1px solid #222;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">GreenFields</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="crops.html">Crops</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Smart Farming for Tomorrow</h1>
+      <p>Sustainable agriculture • Precision techniques • Higher yields • Better soil</p>
+      <a href="crops.html" class="btn">Explore Our Crops →</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 GreenFields — Modern, Responsible, Productive Farming</p>
+  </footer>
+
+</body>
+</html>
