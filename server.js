@@ -1,10 +1,17 @@
 import express from 'express';
+import path from 'path';
+import url from 'url'
 const app = express();
-
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename)
 
 
 app.get('/', (req,res)=>{
-    res.send('Hello thsi is the home page')
+    res.sendFile(path.join(__dirname,'public','home.html'))
+})
+
+app.get('/about', (req,res)=>{
+    res.sendFile(path.join(__dirname,'public','about.html'))
 })
 
 
