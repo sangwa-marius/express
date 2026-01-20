@@ -3,13 +3,9 @@
   "version": "1.0.0",
   "description": "studying express",
   "main": "index.js",
-  "type":"module",
-
+  "type": "module",
   "scripts": {
-    "start":"nodemon  server.js"
-    
-
-
+    "start": "nodemon  --env-file=.env server.js"
   },
   "keywords": [
     "marius",
@@ -19,7 +15,9 @@
   "author": "Sangwa Marius",
   "license": "MIT",
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.11"
