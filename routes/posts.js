@@ -1,4 +1,6 @@
 import express from 'express'
+import Student from '../models/student.js';
+import student from '../models/student.js';
 const router = express.Router();
 
 const posts = [
@@ -40,8 +42,9 @@ const posts = [
  *     responses:
  *       200:
  *         description: List of posts
+ *       
  */
-router.get('/posts', (req, res) => {
+router.get('/', (req, res) => {
   const limit = parseInt(req.query.limit);
 
   if (!isNaN(limit) && limit > 0) {
@@ -83,5 +86,21 @@ router.get('/:id', (req, res) => {
   res.status(200).json(post);
 });
 
+
+router.post('/students',(req,res)=>{
+  try {
+    const newStudent = req.body;
+    async function createNewStudent(){
+    const student =  await Student.create(newStudent);
+    console.log(student)
+    res.status(201).json({student});
+  }
+  createNewStudent()
+  
+  } catch (error) {
+    console.log(error.message)
+    
+  }
+})
 
 export default router;

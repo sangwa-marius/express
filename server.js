@@ -1,45 +1,17 @@
 import express from 'express';
-import path from 'path';
-import url from 'url';
 import posts from './routes/posts.js';
-import swaggerUi from 'swagger-ui-express';
-import swaggerJsdoc from 'swagger-jsdoc';
-
+import mongoose from 'mongoose';
+import Student  from './models/student.js';
 const app = express();
 const port = process.env.PORT || 7500;
+mongoose.connect('mongodb://localhost:27017/express');
 
-// Swagger configuration
-const swaggerOptions = {
-  definition: {
-    openapi: '3.0.0',
-    info: {
-      title: 'My Fast Swagger API Tester',
-      version: '1.0.0',
-      description: 'This is so amazing'
-    },
-    servers: [
-      {
-        url: `http://localhost:${port}`
-      }
-    ]
-  },
-  apis: ['./routes/*.js']
-};
 
-const swaggerSpec = swaggerJsdoc(swaggerOptions);
-
-// Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Routes
-app.use('/posts', posts);
+app.use('/api', posts);
 
-// Swagger UI
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-
-// Start server
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
-  console.log(`Swagger UI available at http://localhost:${port}/api-docs`);
 });
