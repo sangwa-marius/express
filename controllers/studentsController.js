@@ -32,9 +32,22 @@ const getStudentByFirstName = async(req, res) => {
 }
 
 
-const addStudent =  async (req,res)=>{
+const addStudent =  async (req,res,next)=>{
   try {
     const newStudent = req.body;
+    const [email,firstName,lastName,age,] = [newStudent.email,newStudent.firstName,newStudent.lastName,newStudent.age];
+    if(!email||!firstName||!lastName||!age){
+      const error = new Error('Email, firstName, lastName, and age are required');
+      error.status = 400;
+      return next(error);
+      
+    }
+    const existingStudent = await Student.findOne({email:email});
+    if(existingStudent){
+      const error = new Error('Student with this email already exists');
+      error.status = 400;
+      return next(error);
+    }
     const student =  await Student.create(newStudent);
     console.log(student)
     res.status(201).json({student});
@@ -50,7 +63,9 @@ const deleteStudent =  async (req,res)=>{
       const firstName = req.params.firstName;
       const student = students.find(s=>s.firstName===firstName);
       if(!student){
-        return res.status(404).json({message:`Student with first name ${firstName} not found`});
+        const error = new Error(`Student with first name ${firstName} not found`);
+        error.status = 404;
+        return next(error);
       }
       await Student.deleteOne({firstName:firstName});
       res.status(200).json({message:`Student with first name ${firstName} deleted successfully`});
