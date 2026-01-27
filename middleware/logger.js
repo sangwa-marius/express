@@ -1,5 +1,14 @@
+import colors from 'colors';
+
 const logger  = (req,res,next)=>{
-  console.log(`${req.method} ${req.protocol}://localhost:3000${req.originalUrl}`);
+  const methColors ={
+    GET:'green',
+    POST:'blue',
+    DELETE:'red',
+    PUT:'yellow'
+  }
+  const colors = methColors[req.method] || 'white';
+  console.log(`${req.method} ${req.protocol}://${req.get('host')}${req.originalUrl}`[colors]);
   next()
 }
 

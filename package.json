@@ -15,6 +15,7 @@
   "author": "Sangwa Marius",
   "license": "MIT",
   "dependencies": {
+    "colors": "^1.4.0",
     "express": "^5.2.1",
     "mongoose": "^9.1.5",
     "swagger-jsdoc": "^6.2.8",

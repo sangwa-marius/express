@@ -1,19 +1,30 @@
 import mongoose from 'mongoose';
 
 const Student = new mongoose.Schema({
-    firstName: String,
-    lastName: String,
+    firstName: {
+        type: String,
+        required: true,
+        trim: true,
+    },
+    
+    lastName: {
+        type: String,
+        required: true,
+        trim: true,
+    },
     age: {
         type: Number,
         required: true,
-        min: 0
+        min: 0,
+        trim: true,
     },
     grade: String,
     email:{
         type: String,
         required: true,
         unique: true,
-        lowercase: true
+        lowercase: true,
+        trim: true,
     },
     hobbies: {
         type: [String],
